@@ -1,0 +1,121 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-08-01/subscriptionDeploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+  "mspOfferName": {
+   "type": "string",
+   "metadata": {
+    "description": "Specify a unique name for your offer"
+   },
+   "defaultValue": "CSP Lighthouse - Managed Detection and Response"
+  },
+  "mspOfferDescription": {
+   "type": "string",
+   "metadata": {
+    "description": "Azure Lighthouse definition from the CSP Lighthouse tenant for providing agreed SOC related services"
+   },
+   "defaultValue": "Managed SOC Services"
+  },
+  "rgName": {
+   "type": "string",
+   "defaultValue": "CustomerRG"
+  }
+ },
+ "variables": {
+  "mspRegistrationName": "[guid(parameters('mspOfferName'))]",
+  "mspAssignmentName": "[guid(parameters('mspOfferName'))]",
+  "managedByTenantId": "86cc0102-e93d-4aaa-a330-8f66713ae833",
+  "authorizations": [
+   {
+    "principalId": "291e7591-81a2-4da4-b78e-8f5f3e4a0234",
+    "roleDefinitionId": "51d6186e-6489-4900-b93f-92e23144cca5",
+    "principalIdDisplayName": "CSP Security Analysts"
+   },
+   {
+    "principalId": "291e7591-81a2-4da4-b78e-8f5f3e4a0234",
+    "roleDefinitionId": "8d289c81-5878-46d4-8554-54e1e3d8b5cb",
+    "principalIdDisplayName": "CSP Security Analysts"
+   },
+   {
+    "principalId": "291e7591-81a2-4da4-b78e-8f5f3e4a0234",
+    "roleDefinitionId": "73c42c96-874c-492b-b04d-ab87d138a893",
+    "principalIdDisplayName": "CSP Security Analysts"
+   },
+   {
+    "principalId": "291e7591-81a2-4da4-b78e-8f5f3e4a0234",
+    "roleDefinitionId": "3e150937-b8fe-4cfb-8069-0eaf05ecd056",
+    "principalIdDisplayName": "CSP Security Analysts"
+   },
+   {
+    "principalId": "042522ff-793d-4c18-9439-46cefaa9a718",
+    "roleDefinitionId": "3e150937-b8fe-4cfb-8069-0eaf05ecd056",
+    "principalIdDisplayName": "CSP Security Engineers"
+   },
+   {
+    "principalId": "042522ff-793d-4c18-9439-46cefaa9a718",
+    "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
+    "principalIdDisplayName": "CSP Security Engineers"
+   },
+   { 
+    "principalId": "042522ff-793d-4c18-9439-46cefaa9a718",    
+    "principalIdDisplayName": "CSP Security Engineers",
+    "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46"
+   },
+   {
+     "principalId": "d24f459d-fbfb-48d5-beb7-4c816712636f",
+     "roleDefinitionId": "f4c81013-99ee-4d62-a7ee-b3f1f648599a",
+     "principalIdDisplayName": "Azure Security Insights"
+   }
+  ]
+ },
+ "resources": [
+  {
+   "type": "Microsoft.ManagedServices/registrationDefinitions",
+   "apiVersion": "2020-02-01-preview",
+   "name": "[variables('mspRegistrationName')]",
+   "properties": {
+    "registrationDefinitionName": "[parameters('mspOfferName')]",
+    "description": "[parameters('mspOfferDescription')]",
+    "managedByTenantId": "[variables('managedByTenantId')]",
+    "authorizations": "[variables('authorizations')]"
+   }
+  },
+  {
+   "type": "Microsoft.Resources/deployments",
+   "apiVersion": "2018-05-01",
+   "name": "rgAssignment",
+   "resourceGroup": "[parameters('rgName')]",
+   "dependsOn": [
+    "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+   ],
+   "properties": {
+    "mode": "Incremental",
+    "template": {
+     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+     "contentVersion": "1.0.0.0",
+     "parameters": {},
+     "resources": [
+      {
+       "type": "Microsoft.ManagedServices/registrationAssignments",
+       "apiVersion": "2020-02-01-preview",
+       "name": "[variables('mspAssignmentName')]",
+       "properties": {
+        "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+       }
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "outputs": {
+  "mspOfferName": {
+   "type": "string",
+   "value": "[concat('Managed by', ' ', parameters('mspOfferName'))]"
+  },
+  "authorizations": {
+   "type": "array",
+   "value": "[variables('authorizations')]"
+  }
+ }
+}
