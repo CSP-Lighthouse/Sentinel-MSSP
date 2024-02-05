@@ -2,9 +2,9 @@
 
 
 
-<img src="Lighthouse-look-B.jpg" alt="CSP MDR One-Click deploy for Sentinel" width="800"/>
+![CSP_AD_HORIZONTAL-05](https://github.com/CSP-Lighthouse/Sentinel-MSSP/assets/117652672/a5d2d3f9-e432-477c-a7d7-4dee601488ce)
 
-[CSP's](https://cspa.com.au/mdr/) one click to deploy Microsoft Sentinel into your own environment. Simply click the button below and follow the instructions.
+[CSP's](https://cspa.com.au/mdr/) one click to deploy Microsoft Sentinel into your environment. Simply click the button below and follow the instructions.
 
 ## CSP MDR - Deployment Options
 
