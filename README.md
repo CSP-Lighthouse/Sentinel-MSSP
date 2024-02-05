@@ -2,7 +2,7 @@
 
 
 
-![CSP_AD_HORIZONTAL-05](https://github.com/CSP-Lighthouse/Sentinel-MSSP/assets/117652672/a5d2d3f9-e432-477c-a7d7-4dee601488ce)
+![CSP_LH_HORIZONTAL-07](https://github.com/CSP-Lighthouse/Sentinel-MSSP/assets/117652672/06c83f13-1d79-441f-afce-85cdcfea6e46)
 
 [CSP's](https://csp.global/) one click to deploy Microsoft Sentinel into your environment. Simply click the button below and follow the instructions.
 
