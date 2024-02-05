@@ -4,7 +4,7 @@
 
 ![CSP_LH_HORIZONTAL-07](https://github.com/CSP-Lighthouse/Sentinel-MSSP/assets/117652672/06c83f13-1d79-441f-afce-85cdcfea6e46)
 
-## CSP Lighthouse - Deployment Options
+## CSP Lighthouse One-Click Deployment
 
 | Items | Deploy | 
 | :---| :---| 
