@@ -8,7 +8,7 @@
 
 | Items | Deploy | 
 | :---| :---| 
-| [Azure Lighthouse](https://github.com/mastersoho/CSPLighthouse/tree/main/deploy-lighthouse) | [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmastersoho%2FCSPLighthouse%2Fmain%2Fdeploy-lighthouse%2Flighthousedeploy.json) |
+| [Azure Lighthouse](https://github.com/mastersoho/CSPLighthouse/tree/main/deploy-lighthouse) | [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FCSP-Lighthouse%2FSentinel-MSSP%2Fmain%2Flighthousedeploy.json) |
 
 | Group Name  | Role Id                        | Name | Description |
 | ------------------- | ------------------------------ | -----|------------- |
