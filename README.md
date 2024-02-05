@@ -6,9 +6,7 @@
 
 [CSP's](https://csp.global/) one click to deploy Microsoft Sentinel into your environment. Simply click the button below and follow the instructions.
 
-## CSP MDR - Deployment Options
-
-A few deployments are available through Microsoft Sentinel!
+## CSP Lighthouse - Deployment Options
 
 | Items | Deploy | 
 | :---| :---| 
