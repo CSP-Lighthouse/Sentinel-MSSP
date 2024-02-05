@@ -4,11 +4,11 @@
 
 ![CSP_AD_HORIZONTAL-05](https://github.com/CSP-Lighthouse/Sentinel-MSSP/assets/117652672/a5d2d3f9-e432-477c-a7d7-4dee601488ce)
 
-[CSP's](https://cspa.com.au/mdr/) one click to deploy Microsoft Sentinel into your environment. Simply click the button below and follow the instructions.
+[CSP's](https://csp.global/) one click to deploy Microsoft Sentinel into your environment. Simply click the button below and follow the instructions.
 
 ## CSP MDR - Deployment Options
 
-A few deployments available through Microsoft Sentinel!
+A few deployments are available through Microsoft Sentinel!
 
 | Items | Deploy | 
 | :---| :---| 
