@@ -33,6 +33,11 @@
    },
    {
     "principalId": "291e7591-81a2-4da4-b78e-8f5f3e4a0234",
+    "roleDefinitionId": "3e150937-b8fe-4cfb-8069-0eaf05ecd056",
+    "principalIdDisplayName": "CSP Security Analysts"
+   },
+   {
+    "principalId": "291e7591-81a2-4da4-b78e-8f5f3e4a0234",
     "roleDefinitionId": "8d289c81-5878-46d4-8554-54e1e3d8b5cb",
     "principalIdDisplayName": "CSP Security Analysts"
    },
